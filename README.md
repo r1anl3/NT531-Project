@@ -11,7 +11,8 @@
 
 - Cloud - [**Google Cloud Platform**](https://cloud.google.com)
 - Infrastructure as Code software - [**Terraform**](https://www.terraform.io)
-...
+- Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/)
+- Function as a Service (FaaS) - [**Open FaaS**](https://www.openfaas.com/)
 
 ### Architecture
 
