@@ -1,6 +1,6 @@
 variable "project" {
   description = "The GCP project to deploy resources to"
-  default = "Nagios Project"
+  default = "stately-pulsar-417203"
   type = string
 }
 

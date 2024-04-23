@@ -7,15 +7,9 @@ terraform {
   }
 }
 
-resource "google_service_account" "default" {
-  account_id   = "my-custom-sa"
-  display_name = "Custom SA for VM Instance"
-}
-
 resource "google_compute_instance" "nagios_vm_instance" {
   name         = "nagios-instance"
   machine_type = "e2-medium"
-  tags = ["nagios"]
 
   boot_disk {
     initialize_params {
@@ -27,4 +21,6 @@ resource "google_compute_instance" "nagios_vm_instance" {
   network_interface {
     network = "default"
   }
+  #Allow http traffic
+  tags = ["http-server"]
 }
