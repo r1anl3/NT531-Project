@@ -9,10 +9,10 @@
 
 ### Tools & Technologies
 
-- Cloud - [**Google Cloud Platform**](https://cloud.google.com){:target="_blank"}
-- Infrastructure as Code software - [**Terraform**](https://www.terraform.io){:target="_blank"}
-- Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/){:target="_blank"}
-- Function as a Service (FaaS) - [**Open FaaS**](https://www.openfaas.com/){:target="_blank"}
+- Cloud - [**Google Cloud Platform**](https://cloud.google.com)
+- Infrastructure as Code software - [**Terraform**](https://www.terraform.io)
+- Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/)
+- Function as a Service (FaaS) - [**Open FaaS**](https://www.openfaas.com/)
 
 ### Architecture
 
