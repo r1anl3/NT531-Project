@@ -14,6 +14,6 @@
 - Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/)
 - Function as a Service (FaaS) - [**Open FaaS**](https://www.openfaas.com/)
 
-### Architecture
+### Architecture *(draft)*
 
 ![draft system](/image/draf-arch.png)
