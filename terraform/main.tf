@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "5.25.0"
-    }
-  }
-}
 
 resource "google_compute_instance" "nagios_vm_instance" {
   name         = "nagios-instance"
@@ -60,5 +52,5 @@ resource "google_compute_instance" "nginx_vm_instance" {
   tags = ["http-server"]
 
   #Update instance status
-  desired_status = "TERMINATED"
+  desired_status = "RUNNING"
 }
