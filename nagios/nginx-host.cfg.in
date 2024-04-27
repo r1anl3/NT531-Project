@@ -1,0 +1,23 @@
+# Define a template host named "linux-box"
+define host {
+  name               linux-box
+  use                generic-host   ; Inherit default values
+  check_period       24x7            ; Monitor 24 hours a day, 7 days a week
+  check_interval     5               ; Perform checks every 5 minutes
+  retry_interval     1               ; Retry failed checks after 1 minute
+  max_check_attempts 10              ; Retry failed checks up to 10 times
+  check_command      check-host-alive  ; Use the "check-host-alive" plugin
+  notification_period 24x7            ; Send notifications 24 hours a day, 7 days a week
+  notification_interval 30           ; Send notifications every 30 minutes for alerts
+  notification_options d,r           ; Send notifications for both hard and soft states
+  contact_groups     admins          ; Send notifications to the "admins" contact group
+  register           0                ; Do not register this template with Nagios
+}
+
+# Define a host named "nginx-instance" inheriting from "linux-box" template
+define host {
+  use                linux-box       ; Inherit settings from the "linux-box" template
+  host_name          nginx-instance  ; Specific name for this host
+  alias              nginx            ; A more descriptive alias
+  address            <nginx-ip>     ; Replace with the actual IP address of your Nginx server
+}
