@@ -24,7 +24,7 @@ resource "google_compute_instance" "nagios_vm_instance" {
   tags = ["http-server"]
 
   #Update instance status
-  desired_status = "RUNNING"
+  desired_status = "TERMINATED"
 }
 
 resource "google_compute_instance" "nginx_vm_instance" {
@@ -52,5 +52,5 @@ resource "google_compute_instance" "nginx_vm_instance" {
   tags = ["http-server"]
 
   #Update instance status
-  desired_status = "RUNNING"
+  desired_status = "TERMINATED"
 }
