@@ -11,7 +11,7 @@
 
 - Cloud - [**Google Cloud Platform**](https://cloud.google.com)
 - Infrastructure as Code (IaC) - [**Terraform**](https://www.terraform.io)
-- Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/)
+- Monitor - [**Nagios**](https://www.nagios.org/projects/nagios-core/), [**Prometheus**](https://prometheus.io/), [**Grafana**](https://grafana.com/)
 - Function as a Service (FaaS) - [**Open FaaS**](https://www.openfaas.com/)
 
 ### Architecture *(draft)*
