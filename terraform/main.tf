@@ -49,7 +49,7 @@ resource "google_compute_instance" "nginx_vm_instance" {
   }
 
   #Allow http traffic
-  tags = ["http-server"]
+  tags = ["http-server", "nginx"]
 
   #Update instance status
   desired_status = "TERMINATED"
@@ -81,4 +81,18 @@ resource "google_compute_firewall" "grafana_firewall" {
   }
 
   target_tags = ["grafana"]
+}
+
+resource "google_compute_firewall" "nginx_firewall" {
+  project     = var.project
+  name        = "nginx-firewall-rule"
+  network     = "default"
+  description = "Create a firewall rule to allow nginx"
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["8080"]
+  }
+
+  target_tags = ["nginx"]
 }
