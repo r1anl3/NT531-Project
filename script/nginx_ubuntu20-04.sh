@@ -44,13 +44,11 @@ sudo ufw status
 echo "STEP3: CHECKING WEB SERVER"
 systemctl status nginx
 
-# echo "STEP4(optional): SETTING UP SERVER BLOCKS"
-# sudo mkdir -p /var/www/your_domain/html
-# sudo chown -R $USER:$USER /var/www/your_domain/html
-# sudo chmod -R 755 /var/www/your_domain
-# sudo touch /var/www/your_domain/html/index.html
-# echo "$html_content" > /var/www/your_domain/html/index.html
-# sudo touch /etc/nginx/sites-available/your_domain
-# echo "$server_content" > /etc/nginx/sites-available/your_domain
+echo "STEP4: SETTING UP SERVER BLOCKS"
+read -p "Your domain: " your_domain
+sudo mkdir -p /var/www/$your_domain/html
+sudo chown -R $USER:$USER /var/www/$your_domain/html
+sudo chmod -R 755 /var/www/$your_domain
+cd /var/www/$your_domain/html
 
 echo "DONE"
