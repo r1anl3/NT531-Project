@@ -21,10 +21,10 @@ resource "google_compute_instance" "nagios_vm_instance" {
   }
 
   #Allow http traffic
-  tags = ["http-server"]
+  tags = ["http-server", "influx", "grafana"]
 
   #Update instance status
-  desired_status = "TERMINATED"
+  desired_status = "RUNNING"
 }
 
 resource "google_compute_instance" "nginx_vm_instance" {
@@ -53,4 +53,32 @@ resource "google_compute_instance" "nginx_vm_instance" {
 
   #Update instance status
   desired_status = "TERMINATED"
+}
+
+resource "google_compute_firewall" "influxdb_firewall" {
+  project     = var.project
+  name        = "influxdb-firewall-rule"
+  network     = "default"
+  description = "Create a firewall rule to allow influxdb traffic"
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["8086"]
+  }
+
+  target_tags = ["influx"]
+}
+
+resource "google_compute_firewall" "grafana_firewall" {
+  project     = var.project
+  name        = "grafana-firewall-rule"
+  network     = "default"
+  description = "Create a firewall rule to allow grafana"
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["3000"]
+  }
+
+  target_tags = ["grafana"]
 }
