@@ -17,4 +17,4 @@
 
 ### Architecture *(draft)*
 
-![draft system](/image/draf-arch.png)
+![draft system](/image/draf-arch-2.png)
