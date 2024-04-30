@@ -108,3 +108,10 @@ define service {
     check_command           check_http
     notifications_enabled   0
 }
+
+define service {
+    use                     generic-service           ; Name of service template to use
+    host_name               nginx-instance
+    service_description     HTTP
+    check_command           check_nginx
+}
