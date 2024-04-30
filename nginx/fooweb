@@ -8,6 +8,7 @@ server {
         server_name localhost;
 
         location / {
-                try_files $uri $uri/ =404;
+                # To allow POST on static pages
+                error_page  405     =200 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
         }
 }
