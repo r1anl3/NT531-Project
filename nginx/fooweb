@@ -9,6 +9,14 @@ server {
 
         location / {
                 # To allow POST on static pages
-                error_page  405     =200 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
+                error_page  405     =200 https://svuit.github.io/mmtt ;
+        }
+
+        location /nginx_status {
+                stub_status on;
+                access_log   /var/log/nginx/nagios.acess.log;
+                allow 127.0.0.1;
+                allow 10.128.0.0/25;
+                deny all;
         }
 }
