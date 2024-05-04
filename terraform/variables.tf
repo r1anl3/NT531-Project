@@ -1,23 +1,23 @@
 variable "project" {
   description = "The GCP project to deploy resources to"
-  default = "stately-pulsar-417203"
+  default = ""
   type = string
 }
 
 variable "region" {
   description = "The GCP region to deploy resources to"
-  default = "us-central1"
+  default = ""
   type = string
 }
 
 variable "zone" {
   description = "The GCP zone to deploy resources to"
-  default = "us-central1-a"
+  default = ""
   type = string
 }
 
 variable "vm_image" {
   description = "The VM image to use for the VM instance"
-  default = "ubuntu-os-cloud/ubuntu-2004-lts"
+  default = ""
   type = string
 }
